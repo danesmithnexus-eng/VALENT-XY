@@ -63,6 +63,9 @@ const handleNoButton = () => {
 
 <template>
   <div class="valentine-container">
+    <!-- Moving GIF Background -->
+    <div class="gif-background"></div>
+
     <!-- Floating Hearts Background -->
     <div class="hearts-container">
       <HeartParticle 
@@ -174,6 +177,29 @@ const handleNoButton = () => {
   position: relative;
   overflow: hidden;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.gif-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  background: url('/Aibjz6eeT.gif') repeat-x;
+  background-size: contain;
+  animation: moveLeft 20s linear infinite;
+  z-index: 0;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+@keyframes moveLeft {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 .hearts-container {
